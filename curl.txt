@@ -1,0 +1,5 @@
+* 0 * * * curl -K /var/www/html/scm/aps/ldx.php
+
+TRUNCATE tbl_station;
+TRUNCATE tbl_modul;
+TRUNCATE tbl_menu;
