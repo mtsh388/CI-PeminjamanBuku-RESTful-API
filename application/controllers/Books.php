@@ -18,6 +18,8 @@ class Books extends RestController
 
   public function index_get($id = NULL)
   {
+    var_dump($id);
+
     if (!empty($id)) {
       $data = $this->m_books->get_book($id);
       if (empty($data)) {
@@ -54,8 +56,6 @@ class Books extends RestController
       'author' => $this->put('author'),
       'published_date' => $this->put('published_date'),
     ];
-    var_dump($data);
-    die;
     $result = $this->m_books->update_book($id, $data);
     if ($result) {
       $this->response(['message' => 'Book updated successfully'], RestController::HTTP_OK);
@@ -102,5 +102,10 @@ class Books extends RestController
     } else {
       echo json_encode(['message' => 'Failed to return book'], 400);
     }
+  }
+  public function show_borrowing()
+  {
+    $data = $this->m_borrowing->get_borrowing();
+    $this->response($data, RestController::HTTP_OK);
   }
 }

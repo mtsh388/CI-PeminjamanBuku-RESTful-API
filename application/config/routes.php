@@ -54,12 +54,12 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 // CRUD routes for books
-$route['books']['GET'] = 'books';
-$route['books/(:num)']['GET'] = 'books/$1';
+$route['books/index_get/(:num)']['GET'] = 'books/$1';
 $route['books/index_post']['POST'] = 'books/index_post';
 $route['books/index_put/(:num)']['PUT'] = 'books/index_put/$1';
 $route['books/(:num)']['DELETE'] = 'books/$1';
 
 // Borrow/Return routes
-$route['books/borrow']['post'] = 'books/borrow';
-$route['books/return']['put'] = 'books/return';
+$route['Borrowing']['GET'] = 'borrowing';
+$route['Borrowing']['POST'] = 'borrowing';
+$route['Borrowing']['PUT'] = 'borrowing';
