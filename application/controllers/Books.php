@@ -18,8 +18,6 @@ class Books extends RestController
 
   public function index_get($id = NULL)
   {
-    var_dump($id);
-
     if (!empty($id)) {
       $data = $this->m_books->get_book($id);
       if (empty($data)) {
